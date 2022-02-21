@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .normal-table {
+                border: 1px solid black;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            .normal-table th,
+            .normal-table td {
+                border: 1px solid black;
+                padding: 5px 10px;
+            }
+
+            .normal-table thead tr {
+                background-color: #c5a7d4;
+            }
+            /* even 혹은 2n 짝수 odd 혹은 2n+1 홀수 */
+            /* .normal-table tbody tr:nth-child(odd) {
+                background-color: grey;
+            } */
+
+            /* even 혹은 2n 짝수 odd 혹은 2n+1 홀수 */
+            .striped tbody tr:nth-child(odd) {
+                background-color: grey;
+            }
+
+            .hover tbody tr:hover {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <select name="" id="gender">
+            <option value="">전체(성별)</option>
+            <option value="male">남자</option>
+            <option value="female">여자</option>
+        </select>
+        <input type="search" name="" id="name" placeholder="이름으로 검색" />
+        <button onclick="searchByName();">검색</button>
+        <button onclick="doSearch();">조회</button>
+        <button onclick="createData();">고객 데이터 생성</button>
+        <button onclick="deleteData();" id="delete" disabled>선택 데이터 삭제</button>
+
+        <table class="normal-table striped">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="chks" /></th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="tbBody"></tbody>
+        </table>
+
+        <script src="../javascript/main.js"></script>
+    </body>
+</html>
